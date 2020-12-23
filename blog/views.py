@@ -4,26 +4,26 @@ from django.urls import reverse_lazy
 
 # create home page view extend list view
 class HomePageView(ListView):
-    template_name = "blog/home.html"
+    template_name = "home.html"
     model = Post
 
 # add detail view
 class DetailView(DetailView):
-    template_name = "blog/post_detail.html"
+    template_name = "post_detail.html"
     model = Post
 
 class CreateBlogView(CreateView):
-    template_name = "blog/create_blog.html"
+    template_name = "create_blog.html"
     model = Post
     fields = ['author', 'title', 'body']
 
 class BlogUpdateView(UpdateView):
-    template_name = "blog/update_blog.html"
+    template_name = "update_blog.html"
     model = Post
     fields = ['title', 'body']
 
 
 class DeleteBlogView(DeleteView):
-    template_name = "blog/delete_blog.html"
+    template_name = "delete_blog.html"
     model = Post
     success_url = reverse_lazy('home')
